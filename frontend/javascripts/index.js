@@ -7,3 +7,19 @@ let imagePost = document.getElementById('image-post')
 let login = document.getElementById('login')
 
 let allImages = {}
+
+//signup and login form
+function signUpOrLoginForm() {
+
+}
+
+//signin function for existing user
+function signIn() {
+
+}
+
+//handle sign up for new user
+function signUp() {
+
+}
+

@@ -5,6 +5,8 @@ let profile = document.getElementById('profile')
 let feed = document.getElementById('feed')
 let imagePost = document.getElementById('image-post')
 let login = document.getElementById('login')
+let likebutton = document.getElementById('likebutton')
+
 
 let allImages = {}
 

@@ -9,6 +9,7 @@ let likebutton = document.getElementById('likebutton')
 
 document.addEventListener('DOMContentLoaded', () => {
     signUpOrLoginForm()
+    createImageFormListener()
 })
 
 let allImages = {}
@@ -44,3 +45,11 @@ function signUp() {
 
 }
 
+
+//Create a new image post
+function createImageFormListener() {
+    imagePost.addEventListener('click', (e) => {
+        e.preventDefault(); //might not need this if not submitting a form
+        //add function for create new image form
+    })
+}

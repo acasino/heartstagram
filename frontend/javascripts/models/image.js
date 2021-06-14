@@ -1,10 +1,10 @@
 //image class
 class Image {
-    constructor(image) {
-        this.caption = image.caption
+    constructor(image, caption) {
+        this.image = image
+        this.caption = caption
 
     }
-    static all = []
 
 }
 

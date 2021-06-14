@@ -1,5 +1,6 @@
 //hearts
 class Heart {
+    constructor()
 
 }
 

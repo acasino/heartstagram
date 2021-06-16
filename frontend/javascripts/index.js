@@ -1,15 +1,8 @@
-// List of variables
-let navbar = document.getElementsByClassName('navbar')
-let heartstagram = document.getElementById('heartstagram-logo')
-let profile = document.getElementById('profile')
-let feed = document.getElementById('feed')
-let imageForm = document.getElementById('image-form')
-let login = document.getElementById('login')
-let likebutton = document.getElementById('likebutton')
+//index.js
 
 document.addEventListener('DOMContentLoaded', () => {
-    signUpOrLoginForm()
-    createImageFormListener()
+    // signUpOrLoginForm()
+    // createImageFormListener()
     imageForm().addEventListener("submit", imageApi.handleSubmit)
 })
 
@@ -48,9 +41,9 @@ function handleSignUp() {
 
 
 //Create a new image post
-function createImageFormListener() {
-    imagePost.addEventListener('click', (e) => {
-        e.preventDefault(); //might not need this if not submitting a form
-        //add function for create new image form
-    })
-}
+// function createImageFormListener() {
+//     imagePost.addEventListener('click', (e) => {
+//         e.preventDefault(); //might not need this if not submitting a form
+//         //add function for create new image form
+//     })
+// }

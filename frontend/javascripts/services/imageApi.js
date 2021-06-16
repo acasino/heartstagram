@@ -14,7 +14,7 @@ class imageApi {
         const data = {
             caption: caption().value
         }
-        fetch(imageApi.baseUrl, {
+        fetch(imageApi.url, {
             method: 'POST',
             headers: {
                 "Content-Type": 'application/json'

@@ -1,8 +1,8 @@
 //hearts
-class Heart {
-    constructor()
+// class Heart {
+//     constructor()
 
-}
+// }
 
 // t.integer "heart_count"
 // t.bigint "image_id", null: false

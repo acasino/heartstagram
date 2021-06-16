@@ -3,6 +3,7 @@ class Image {
     static all = []
 
     constructor(image, caption) {
+        debugger
         this.image = image
         this.caption = caption
         Image.all.push(this)

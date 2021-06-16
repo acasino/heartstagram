@@ -1,9 +1,15 @@
 //image class
 class Image {
+    static all = []
+
     constructor(image, caption) {
         this.image = image
         this.caption = caption
+        Image.all.push(this)
+    }
 
+    static getAll() {
+        return this.all
     }
 
 }

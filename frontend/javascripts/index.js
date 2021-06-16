@@ -3,13 +3,14 @@ let navbar = document.getElementsByClassName('navbar')
 let heartstagram = document.getElementById('heartstagram-logo')
 let profile = document.getElementById('profile')
 let feed = document.getElementById('feed')
-let imagePost = document.getElementById('image-post')
+let imageForm = document.getElementById('image-form')
 let login = document.getElementById('login')
 let likebutton = document.getElementById('likebutton')
 
 document.addEventListener('DOMContentLoaded', () => {
     signUpOrLoginForm()
     createImageFormListener()
+    imageForm().addEventListener("submit", imageApi.handleSubmit)
 })
 
 let allImages = {}
@@ -36,12 +37,12 @@ function signUpOrLoginForm() {
 
 
 //signin function for existing user
-function signIn() {
+function handleSignIn() {
 
 }
 
 //handle sign up for new user
-function signUp() {
+function handleSignUp() {
 
 }
 

@@ -176,3 +176,81 @@ FOREIGN KEY ("blob_id")
   [1m[36mImage Load (1.1ms)[0m  [1m[34mSELECT "images".* FROM "images" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
   [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "images"[0m
   [1m[35m (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "images"[0m
+Started POST "/images" for ::1 at 2021-06-16 01:40:26 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ImagesController#create as */*
+  Parameters: {"caption"=>"crest", "image"=>{"caption"=>"crest"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (20.16ms)
+Completed 422 Unprocessable Entity in 62ms (Views: 25.1ms | ActiveRecord: 7.9ms | Allocations: 14019)
+
+
+Started POST "/images" for ::1 at 2021-06-16 01:44:56 -0500
+Processing by ImagesController#create as */*
+  Parameters: {"caption"=>"test", "image"=>{"caption"=>"test"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (1.1ms)
+Completed 422 Unprocessable Entity in 13ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 712)
+
+
+Started POST "/images" for ::1 at 2021-06-16 01:45:26 -0500
+Processing by ImagesController#create as */*
+  Parameters: {"caption"=>"test", "image"=>{"caption"=>"test"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (1.07ms)
+Completed 422 Unprocessable Entity in 13ms (Views: 1.7ms | ActiveRecord: 0.0ms | Allocations: 693)
+
+
+Started POST "/images" for ::1 at 2021-06-16 01:46:31 -0500
+Processing by ImagesController#create as */*
+  Parameters: {"caption"=>"test", "image"=>{"caption"=>"test"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.66ms)
+Completed 422 Unprocessable Entity in 5ms (Views: 1.2ms | ActiveRecord: 0.0ms | Allocations: 693)
+
+
+Started POST "/images" for ::1 at 2021-06-16 01:47:20 -0500
+Processing by ImagesController#create as */*
+  Parameters: {"caption"=>"test", "image"=>{"caption"=>"test"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.9ms)
+Completed 422 Unprocessable Entity in 12ms (Views: 1.5ms | ActiveRecord: 0.0ms | Allocations: 693)
+
+
+Started POST "/images" for ::1 at 2021-06-16 01:48:24 -0500
+Processing by ImagesController#create as */*
+  Parameters: {"caption"=>"Test", "image"=>{"caption"=>"Test"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (1.03ms)
+Completed 422 Unprocessable Entity in 8ms (Views: 1.9ms | ActiveRecord: 0.0ms | Allocations: 680)
+
+
+Started POST "/images" for ::1 at 2021-06-16 01:49:28 -0500
+Processing by ImagesController#create as */*
+  Parameters: {"caption"=>"", "image"=>{"caption"=>""}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (1.41ms)
+Completed 422 Unprocessable Entity in 5ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 680)
+
+
+Started POST "/images" for ::1 at 2021-06-16 01:49:45 -0500
+Processing by ImagesController#create as */*
+  Parameters: {"caption"=>"test", "image"=>{"caption"=>"test"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (1.05ms)
+Completed 422 Unprocessable Entity in 16ms (Views: 1.7ms | ActiveRecord: 0.0ms | Allocations: 680)
+
+
+Started POST "/images" for ::1 at 2021-06-16 01:50:20 -0500
+Processing by ImagesController#create as */*
+  Parameters: {"caption"=>"testa", "image"=>{"caption"=>"testa"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.45ms)
+Completed 422 Unprocessable Entity in 6ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 681)
+
+
+Started POST "/images" for ::1 at 2021-06-16 01:50:43 -0500
+Processing by ImagesController#create as */*
+  Parameters: {"caption"=>"Test", "image"=>{"caption"=>"Test"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.99ms)
+Completed 422 Unprocessable Entity in 7ms (Views: 1.6ms | ActiveRecord: 0.0ms | Allocations: 680)
+
+
+Started POST "/images" for ::1 at 2021-06-16 01:51:14 -0500
+Processing by ImagesController#create as */*
+  Parameters: {"caption"=>"asdfasfd", "image"=>{"caption"=>"asdfasfd"}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.9ms)
+Completed 422 Unprocessable Entity in 8ms (Views: 1.6ms | ActiveRecord: 0.0ms | Allocations: 680)
+
+

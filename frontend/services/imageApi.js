@@ -9,7 +9,26 @@ class imageApi {
 
 
     //handle submit
-    
+    static handleSubmit(e) {
+        e.preventDefault()
+        const data = {
+            caption: caption().value
+        }
+        fetch(imageApi.baseUrl, {
+            method: 'POST',
+            headers: {
+                "Content-Type": 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(resp => resp.json())
+        .then(json => {
+            let image = new Image(json)
+            imageForm().reset()
+            image.render()
+        })
+    }
+
 
 
     //handle update

@@ -12,6 +12,15 @@ class Image {
         return this.all
     }
 
+    //render
+    render() {
+        const li = document.createElement("li")
+        li.innerHTML = `
+        <span class="caption">${this.caption}</span>
+        `
+        document.appendChild(li)
+    }
+
 }
 
 // t.text "image"

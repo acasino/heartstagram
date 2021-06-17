@@ -254,3 +254,37 @@ Processing by ImagesController#create as */*
 Completed 422 Unprocessable Entity in 8ms (Views: 1.6ms | ActiveRecord: 0.0ms | Allocations: 680)
 
 
+Started POST "/images" for ::1 at 2021-06-17 02:16:16 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ImagesController#create as */*
+  Parameters: {"------WebKitFormBoundaryIZb30QboUJKJWC4m\r\nContent-Disposition: form-data; name"=>"\"image\"\r\n\r\n[object Object]\r\n------WebKitFormBoundaryIZb30QboUJKJWC4m--\r\n"}
+Completed 400 Bad Request in 12ms (ActiveRecord: 0.0ms | Allocations: 5718)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: image):
+  
+app/controllers/images_controller.rb:49:in `image_params'
+app/controllers/images_controller.rb:18:in `create'
+Started POST "/images" for ::1 at 2021-06-17 02:20:05 -0500
+Processing by ImagesController#create as */*
+  Parameters: {"------WebKitFormBoundaryqRd9GRiiLFZjrfQU\r\nContent-Disposition: form-data; name"=>"\"image\"\r\n\r\n[object Object]\r\n------WebKitFormBoundaryqRd9GRiiLFZjrfQU--\r\n"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 117)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: image):
+  
+app/controllers/images_controller.rb:49:in `image_params'
+app/controllers/images_controller.rb:18:in `create'
+Started POST "/images" for ::1 at 2021-06-17 02:20:13 -0500
+Processing by ImagesController#create as */*
+  Parameters: {"------WebKitFormBoundary7sP4fC2A4IUYXaH4\r\nContent-Disposition: form-data; name"=>"\"image\"\r\n\r\n[object Object]\r\n------WebKitFormBoundary7sP4fC2A4IUYXaH4--\r\n"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 116)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: image):
+  
+app/controllers/images_controller.rb:49:in `image_params'
+app/controllers/images_controller.rb:18:in `create'

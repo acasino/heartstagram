@@ -288,3 +288,26 @@ ActionController::ParameterMissing (param is missing or the value is empty: imag
   
 app/controllers/images_controller.rb:49:in `image_params'
 app/controllers/images_controller.rb:18:in `create'
+Started POST "/images" for ::1 at 2021-06-17 03:40:01 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ImagesController#create as */*
+  Parameters: {"imageFile"=>#<ActionDispatch::Http::UploadedFile:0x00007f94e038bf18 @tempfile=#<Tempfile:/var/folders/py/p2gcmwb92x7bd8jwq7jzwyt40000gn/T/RackMultipart20210617-54193-1ft8p0a.jpg>, @original_filename="crest-2.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"imageFile\"; filename=\"crest-2.jpg\"\r\nContent-Type: image/jpeg\r\n">}
+Completed 400 Bad Request in 17ms (ActiveRecord: 0.0ms | Allocations: 5718)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: image):
+  
+app/controllers/images_controller.rb:49:in `image_params'
+app/controllers/images_controller.rb:18:in `create'
+Started POST "/images" for ::1 at 2021-06-17 03:45:12 -0500
+Processing by ImagesController#create as */*
+  Parameters: {"imageFile"=>#<ActionDispatch::Http::UploadedFile:0x00007f94e040ab10 @tempfile=#<Tempfile:/var/folders/py/p2gcmwb92x7bd8jwq7jzwyt40000gn/T/RackMultipart20210617-54193-13k1uvg.jpg>, @original_filename="crest-2.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"imageFile\"; filename=\"crest-2.jpg\"\r\nContent-Type: image/jpeg\r\n">, "caption-input"=>"asdfasdf"}
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms | Allocations: 116)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: image):
+  
+app/controllers/images_controller.rb:49:in `image_params'
+app/controllers/images_controller.rb:18:in `create'

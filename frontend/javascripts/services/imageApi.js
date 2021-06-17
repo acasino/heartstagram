@@ -9,25 +9,42 @@ class imageApi {
 
 
     //handle submit
-    static handleSubmit(e) {
+    // static handleSubmit(e) {
+    //     e.preventDefault()
+    //     const data = {
+    //         caption: caption().value
+    //     }
+    //     fetch(imageApi.url, {
+    //         method: 'POST',
+    //         headers: {
+    //             "Content-Type": 'application/json'
+    //         },
+    //         body: JSON.stringify(data)
+    //     })
+    //     .then(resp => resp.json())
+    //     .then(data => {
+    //         let image = new Image(data.caption)
+    //         imageForm().reset()
+    //         image.render()
+    //     })
+    //     debugger
+    // }
+
+    //handle submit v2
+        static handleSubmit(e) {
         e.preventDefault()
-        const data = {
-            caption: caption().value
-        }
-        fetch(imageApi.url, {
-            method: 'POST',
-            headers: {
-                "Content-Type": 'application/json'
-            },
-            body: JSON.stringify(data)
+        let data = new FormData()
+        Object.keys(formObj).forEach((key, value) => { data.append(key, formObj[key])
         })
-        .then(resp => resp.json())
-        .then(json => {
-            let image = new Image(json)
-            imageForm().reset()
-            image.render()
-        })
+        debugger
     }
+        
+    
+        // Object.keys(formObj).forEach((key, value) => {
+        //     data.append(key, formObj[key])
+        //     }
+        
+
 
 
 

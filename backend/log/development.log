@@ -662,3 +662,177 @@ ActionController::ParameterMissing (param is missing or the value is empty: user
   
 app/controllers/users_controller.rb:49:in `user_params'
 app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Andrew"], ["created_at", "2021-06-18 05:10:28.438551"], ["updated_at", "2021-06-18 05:10:28.438551"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "email" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["email", "v2@gmail.com"], ["updated_at", "2021-06-18 05:11:06.734682"], ["id", 1]]
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/users" for ::1 at 2021-06-18 00:11:56 -0500
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{}}
+Completed 400 Bad Request in 7ms (ActiveRecord: 1.2ms | Allocations: 3153)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:49:in `user_params'
+app/controllers/users_controller.rb:18:in `create'
+Started POST "/users" for ::1 at 2021-06-18 00:13:07 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 1.3ms | Allocations: 153)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:50:in `user_params'
+app/controllers/users_controller.rb:18:in `create'
+Started POST "/users" for ::1 at 2021-06-18 01:23:38 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{}}
+Completed 400 Bad Request in 6ms (Allocations: 121)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:50:in `user_params'
+app/controllers/users_controller.rb:18:in `create'
+Started POST "/users" for ::1 at 2021-06-18 01:33:49 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{}}
+Completed 400 Bad Request in 10ms (ActiveRecord: 1.3ms | Allocations: 3153)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:50:in `user_params'
+app/controllers/users_controller.rb:18:in `create'
+Started POST "/images/" for ::1 at 2021-06-18 01:34:32 -0500
+Processing by ImagesController#create as */*
+  Parameters: {"image"=>#<ActionDispatch::Http::UploadedFile:0x00007fc89af8fd58 @tempfile=#<Tempfile:/var/folders/py/p2gcmwb92x7bd8jwq7jzwyt40000gn/T/RackMultipart20210618-64180-t38h79.jpg>, @original_filename="exmodel.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"exmodel.jpg\"\r\nContent-Type: image/jpeg\r\n">, "caption"=>"asdf"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/images_controller.rb:20:in `create'
+  [1m[36mImage Create (3.4ms)[0m  [1m[32mINSERT INTO "images" ("created_at", "updated_at", "caption") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2021-06-18 06:34:32.801263"], ["updated_at", "2021-06-18 06:34:32.801263"], ["caption", "asdf"]]
+  ↳ app/controllers/images_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/images_controller.rb:20:in `create'
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 10.9ms | Allocations: 17650)
+
+
+  
+ActiveRecord::NotNullViolation (PG::NotNullViolation: ERROR:  null value in column "user_id" of relation "images" violates not-null constraint
+DETAIL:  Failing row contains (4, null, null, 2021-06-18 06:34:32.801263, 2021-06-18 06:34:32.801263, asdf).
+):
+  
+app/controllers/images_controller.rb:20:in `create'
+Started POST "/images/" for ::1 at 2021-06-18 01:35:02 -0500
+Processing by ImagesController#create as */*
+  Parameters: {"image"=>#<ActionDispatch::Http::UploadedFile:0x00007fc896223128 @tempfile=#<Tempfile:/var/folders/py/p2gcmwb92x7bd8jwq7jzwyt40000gn/T/RackMultipart20210618-64180-3sa4x9.jpg>, @original_filename="exfinal.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"exfinal.jpg\"\r\nContent-Type: image/jpeg\r\n">, "caption"=>"asdf"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/images_controller.rb:20:in `create'
+  [1m[36mImage Create (4.4ms)[0m  [1m[32mINSERT INTO "images" ("created_at", "updated_at", "caption") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2021-06-18 06:35:02.057402"], ["updated_at", "2021-06-18 06:35:02.057402"], ["caption", "asdf"]]
+  ↳ app/controllers/images_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/images_controller.rb:20:in `create'
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 6.4ms | Allocations: 1939)
+
+
+  
+ActiveRecord::NotNullViolation (PG::NotNullViolation: ERROR:  null value in column "user_id" of relation "images" violates not-null constraint
+DETAIL:  Failing row contains (5, null, null, 2021-06-18 06:35:02.057402, 2021-06-18 06:35:02.057402, asdf).
+):
+  
+app/controllers/images_controller.rb:20:in `create'
+Started POST "/users" for ::1 at 2021-06-18 02:03:19 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{}}
+Completed 400 Bad Request in 8ms (ActiveRecord: 1.4ms | Allocations: 3153)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:50:in `user_params'
+app/controllers/users_controller.rb:18:in `create'
+Started POST "/users" for ::1 at 2021-06-18 02:04:11 -0500
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{}}
+[31mUnpermitted parameter: :user[0m
+[31mUnpermitted parameter: :user[0m
+Completed 500 Internal Server Error in 33976ms (ActiveRecord: 5.9ms | Allocations: 107909)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/users_controller.rb:21:in `create'
+Started POST "/users" for ::1 at 2021-06-18 02:05:22 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{}}
+[31mUnpermitted parameter: :user[0m
+[31mUnpermitted parameter: :user[0m
+Started POST "/users" for ::1 at 2021-06-18 02:06:15 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Create (2.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2021-06-18 07:06:15.159739"], ["updated_at", "2021-06-18 07:06:15.159739"]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.24ms)
+Completed 201 Created in 18ms (Views: 2.3ms | ActiveRecord: 7.1ms | Allocations: 8772)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+Started POST "/users" for ::1 at 2021-06-18 02:10:46 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2021-06-18 07:10:47.160060"], ["updated_at", "2021-06-18 07:10:47.160060"]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.21ms)
+Completed 201 Created in 18ms (Views: 2.0ms | ActiveRecord: 5.3ms | Allocations: 8773)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started POST "/users" for ::1 at 2021-06-18 02:12:41 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as JSON
+  Parameters: {"user"=>{}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2021-06-18 07:12:42.001224"], ["updated_at", "2021-06-18 07:12:42.001224"]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.21ms)
+Completed 201 Created in 29ms (Views: 2.5ms | ActiveRecord: 5.7ms | Allocations: 8762)
+
+

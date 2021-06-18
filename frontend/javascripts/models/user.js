@@ -9,6 +9,26 @@ class User {
 
     static currentUser = ''
 
-    //fetch for getting username
+    //fetch for getting user
+    static createUser() {
+        const newUser = username().value 
+        fetch("http://localhost:3000/users", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({name: newUser})
+        })
+        .then(resp => resp.json())
+        .then(r => {
+            new User(r)
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+        //
+        console.log("Login worked")
+    }
 
 }

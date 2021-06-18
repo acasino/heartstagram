@@ -1,6 +1,7 @@
 class imageApi {
 
-    static url = `${baseUrl}/images`
+    static url = `${baseUrl}/images/`
+
 
     //fetch image posts
 
@@ -30,14 +31,23 @@ class imageApi {
     //     debugger
     // }
 
-    //handle submit v2
-        static handleSubmit(e) {
-        e.preventDefault()
-        let data = new FormData()
-        Object.keys(formObj).forEach((key, value) => { data.append(key, formObj[key])
-        })
-        debugger
-    }
+        //handle submit v3
+         static handleSubmit(e) {
+            e.preventDefault()
+            let formData = new FormData()
+
+            console.log(image().files) 
+            console.log(caption().value)   
+
+            formData.append("image", image().files[0])
+            formData.append("caption", caption().value)
+            debugger
+            //need to figure out where to post to
+            fetch(imageApi.url, {
+                method: 'POST',
+                body: formData
+            }).catch(console.error)
+        }
         
     
         // Object.keys(formObj).forEach((key, value) => {

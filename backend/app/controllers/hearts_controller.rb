@@ -46,6 +46,6 @@ class HeartsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def heart_params
-      params.require(:heart).permit(:heart_count, :image_id)
+      # params.require(:heart).permit(:heart_count, :image_id)
     end
 end

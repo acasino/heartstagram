@@ -311,3 +311,275 @@ ActionController::ParameterMissing (param is missing or the value is empty: imag
   
 app/controllers/images_controller.rb:49:in `image_params'
 app/controllers/images_controller.rb:18:in `create'
+Started POST "/images/new" for ::1 at 2021-06-17 18:36:20 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/images/new"):
+  
+Started GET "/" for ::1 at 2021-06-17 18:36:29 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/andrewcasino/.rvm/gems/ruby-2.6.1/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/andrewcasino/.rvm/gems/ruby-2.6.1/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 8.7ms | Allocations: 315)
+Completed 200 OK in 37ms (Views: 17.8ms | ActiveRecord: 0.0ms | Allocations: 2450)
+
+
+Started GET "/image" for ::1 at 2021-06-17 18:36:37 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/image"):
+  
+Started GET "/images" for ::1 at 2021-06-17 18:36:42 -0500
+Processing by ImagesController#index as HTML
+  [1m[36mImage Load (4.8ms)[0m  [1m[34mSELECT "images".* FROM "images"[0m
+  ↳ app/controllers/images_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.11ms)
+Completed 200 OK in 21ms (Views: 7.2ms | ActiveRecord: 4.8ms | Allocations: 4415)
+
+
+Started GET "/images" for ::1 at 2021-06-17 18:37:26 -0500
+Processing by ImagesController#index as HTML
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images"[0m
+  ↳ app/controllers/images_controller.rb:8:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.12ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.3ms | Allocations: 751)
+
+
+Started POST "/images" for ::1 at 2021-06-17 18:37:49 -0500
+Processing by ImagesController#create as */*
+  Parameters: {"imageFile"=>#<ActionDispatch::Http::UploadedFile:0x00007fdad667b9a8 @tempfile=#<Tempfile:/var/folders/py/p2gcmwb92x7bd8jwq7jzwyt40000gn/T/RackMultipart20210617-59118-9kgsus.jpg>, @original_filename="exroute.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"imageFile\"; filename=\"exroute.jpg\"\r\nContent-Type: image/jpeg\r\n">, "caption-input"=>"kjhkjh"}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 123)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: image):
+  
+app/controllers/images_controller.rb:49:in `image_params'
+app/controllers/images_controller.rb:18:in `create'
+Started POST "/images" for ::1 at 2021-06-17 18:40:42 -0500
+Processing by ImagesController#create as */*
+  Parameters: {"imageFile"=>#<ActionDispatch::Http::UploadedFile:0x00007fdad672dbf8 @tempfile=#<Tempfile:/var/folders/py/p2gcmwb92x7bd8jwq7jzwyt40000gn/T/RackMultipart20210617-59118-8y2878.jpg>, @original_filename="exroute.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"imageFile\"; filename=\"exroute.jpg\"\r\nContent-Type: image/jpeg\r\n">, "caption-input"=>"kjhkjh"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 116)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: image):
+  
+app/controllers/images_controller.rb:49:in `image_params'
+app/controllers/images_controller.rb:18:in `create'
+Started GET "/routes" for ::1 at 2021-06-17 18:54:08 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/routes"):
+  
+Started POST "/images/" for ::1 at 2021-06-17 18:54:54 -0500
+Processing by ImagesController#create as */*
+  Parameters: {"imageFile"=>#<ActionDispatch::Http::UploadedFile:0x00007fdad8197c50 @tempfile=#<Tempfile:/var/folders/py/p2gcmwb92x7bd8jwq7jzwyt40000gn/T/RackMultipart20210617-59118-1km0qtu.jpg>, @original_filename="exfinal.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"imageFile\"; filename=\"exfinal.jpg\"\r\nContent-Type: image/jpeg\r\n">, "caption-input"=>"asdfasdf"}
+Completed 400 Bad Request in 4ms (Allocations: 116)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: image):
+  
+app/controllers/images_controller.rb:49:in `image_params'
+app/controllers/images_controller.rb:18:in `create'
+Started POST "/images/" for ::1 at 2021-06-17 19:01:43 -0500
+Processing by ImagesController#create as */*
+  Parameters: {"imageFile"=>#<ActionDispatch::Http::UploadedFile:0x00007fdad66fc3c8 @tempfile=#<Tempfile:/var/folders/py/p2gcmwb92x7bd8jwq7jzwyt40000gn/T/RackMultipart20210617-59118-8vwjcb.jpg>, @original_filename="excontroller.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"imageFile\"; filename=\"excontroller.jpg\"\r\nContent-Type: image/jpeg\r\n">, "caption-input"=>"asdfas"}
+Completed 400 Bad Request in 14ms (Allocations: 115)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: image):
+  
+app/controllers/images_controller.rb:49:in `image_params'
+app/controllers/images_controller.rb:18:in `create'
+Started POST "/images/" for ::1 at 2021-06-17 19:06:46 -0500
+Processing by ImagesController#create as */*
+  Parameters: {"imageFile"=>#<ActionDispatch::Http::UploadedFile:0x00007fdad65be6f0 @tempfile=#<Tempfile:/var/folders/py/p2gcmwb92x7bd8jwq7jzwyt40000gn/T/RackMultipart20210617-59118-1tbp1sp.jpg>, @original_filename="exmodel.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"imageFile\"; filename=\"exmodel.jpg\"\r\nContent-Type: image/jpeg\r\n">, "caption-input"=>"asdfasdf"}
+Completed 400 Bad Request in 5ms (Allocations: 1773)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: image):
+  
+app/controllers/images_controller.rb:49:in `image_params'
+app/controllers/images_controller.rb:18:in `create'
+Started POST "/images/" for ::1 at 2021-06-17 19:13:07 -0500
+  
+TypeError (superclass must be a Class (Module given)):
+  
+app/controllers/application_controller.rb:2:in `<main>'
+app/controllers/images_controller.rb:1:in `<main>'
+Started POST "/images/" for ::1 at 2021-06-17 19:17:27 -0500
+Processing by ImagesController#create as */*
+  Parameters: {"imageFile"=>#<ActionDispatch::Http::UploadedFile:0x00007fdad67952a8 @tempfile=#<Tempfile:/var/folders/py/p2gcmwb92x7bd8jwq7jzwyt40000gn/T/RackMultipart20210617-59118-xidld8.jpg>, @original_filename="exmodel.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"imageFile\"; filename=\"exmodel.jpg\"\r\nContent-Type: image/jpeg\r\n">, "caption-input"=>"asdfasd"}
+Completed 400 Bad Request in 7ms (Allocations: 1774)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: image):
+  
+app/controllers/images_controller.rb:49:in `image_params'
+app/controllers/images_controller.rb:18:in `create'
+Started POST "/images/" for ::1 at 2021-06-17 19:19:24 -0500
+Processing by ImagesController#create as */*
+  Parameters: {"imageFile"=>#<ActionDispatch::Http::UploadedFile:0x00007fdad3dfaf10 @tempfile=#<Tempfile:/var/folders/py/p2gcmwb92x7bd8jwq7jzwyt40000gn/T/RackMultipart20210617-59118-1rr3rt.jpg>, @original_filename="exfinal.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"imageFile\"; filename=\"exfinal.jpg\"\r\nContent-Type: image/jpeg\r\n">, "caption-input"=>"asdfasd"}
+Completed 400 Bad Request in 4ms (Allocations: 1774)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: image):
+  
+app/controllers/images_controller.rb:49:in `image_params'
+app/controllers/images_controller.rb:18:in `create'
+Started POST "/images/" for ::1 at 2021-06-17 19:20:30 -0500
+Processing by ImagesController#create as */*
+  Parameters: {"imageFile"=>#<ActionDispatch::Http::UploadedFile:0x00007fdad64fad68 @tempfile=#<Tempfile:/var/folders/py/p2gcmwb92x7bd8jwq7jzwyt40000gn/T/RackMultipart20210617-59118-2dcdr7.jpg>, @original_filename="exfinal.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"imageFile\"; filename=\"exfinal.jpg\"\r\nContent-Type: image/jpeg\r\n">, "caption-input"=>"asdfas"}
+Completed 400 Bad Request in 3ms (Allocations: 1774)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: data):
+  
+app/controllers/images_controller.rb:49:in `image_params'
+app/controllers/images_controller.rb:18:in `create'
+Started POST "/images/" for ::1 at 2021-06-17 19:21:26 -0500
+Processing by ImagesController#create as */*
+  Parameters: {"imageFile"=>#<ActionDispatch::Http::UploadedFile:0x00007fdad3f239a0 @tempfile=#<Tempfile:/var/folders/py/p2gcmwb92x7bd8jwq7jzwyt40000gn/T/RackMultipart20210617-59118-3u4m79.jpg>, @original_filename="exmodel.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"imageFile\"; filename=\"exmodel.jpg\"\r\nContent-Type: image/jpeg\r\n">, "caption-input"=>"asdf"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (8.28ms)
+Completed 422 Unprocessable Entity in 53ms (Views: 9.9ms | ActiveRecord: 16.0ms | Allocations: 13048)
+
+
+Started POST "/images/" for ::1 at 2021-06-17 19:24:59 -0500
+  
+SyntaxError (/Users/andrewcasino/Flatiron/code/heartstagram/backend/app/controllers/images_controller.rb:50: syntax error, unexpected ',', expecting =>
+...params.permit(files: [],:image, :user_id, :caption)
+...                              ^):
+  
+app/controllers/images_controller.rb:50: syntax error, unexpected ',', expecting =>
+app/controllers/images_controller.rb:50: syntax error, unexpected ',', expecting =>
+Started POST "/images/" for ::1 at 2021-06-17 19:25:38 -0500
+Processing by ImagesController#create as */*
+  Parameters: {"imageFile"=>#<ActionDispatch::Http::UploadedFile:0x00007fdad66b7db8 @tempfile=#<Tempfile:/var/folders/py/p2gcmwb92x7bd8jwq7jzwyt40000gn/T/RackMultipart20210617-59118-17xmb02.jpg>, @original_filename="exfinal.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"imageFile\"; filename=\"exfinal.jpg\"\r\nContent-Type: image/jpeg\r\n">, "caption-input"=>"asdf"}
+[31mUnpermitted parameters: :imageFile, :caption-input[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.57ms)
+Completed 422 Unprocessable Entity in 19ms (Views: 1.0ms | ActiveRecord: 5.8ms | Allocations: 7033)
+
+
+Started POST "/images/" for ::1 at 2021-06-17 19:36:12 -0500
+Processing by ImagesController#create as */*
+  Parameters: {"imageFile"=>#<ActionDispatch::Http::UploadedFile:0x00007fdad6464390 @tempfile=#<Tempfile:/var/folders/py/p2gcmwb92x7bd8jwq7jzwyt40000gn/T/RackMultipart20210617-59118-bc4kqh.jpg>, @original_filename="exfinal.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"imageFile\"; filename=\"exfinal.jpg\"\r\nContent-Type: image/jpeg\r\n">, "caption-input"=>"asdf"}
+[31mUnpermitted parameters: :imageFile, :caption-input[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.8ms)
+Completed 422 Unprocessable Entity in 44ms (Views: 1.5ms | ActiveRecord: 10.1ms | Allocations: 8742)
+
+
+Started POST "/images/" for ::1 at 2021-06-17 19:37:16 -0500
+Processing by ImagesController#create as */*
+  Parameters: {"imageFile"=>#<ActionDispatch::Http::UploadedFile:0x00007fdad670d920 @tempfile=#<Tempfile:/var/folders/py/p2gcmwb92x7bd8jwq7jzwyt40000gn/T/RackMultipart20210617-59118-19kvdoc.jpg>, @original_filename="exroute.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"imageFile\"; filename=\"exroute.jpg\"\r\nContent-Type: image/jpeg\r\n">, "caption-input"=>"asdf"}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 3189)
+
+
+  
+NameError (undefined local variable or method `input' for #<ImagesController:0x007fdad78554a8>):
+  
+app/controllers/images_controller.rb:50:in `image_params'
+app/controllers/images_controller.rb:18:in `create'
+Started POST "/images/" for ::1 at 2021-06-17 19:37:47 -0500
+Processing by ImagesController#create as */*
+  Parameters: {"imageFile"=>#<ActionDispatch::Http::UploadedFile:0x00007fdad7310128 @tempfile=#<Tempfile:/var/folders/py/p2gcmwb92x7bd8jwq7jzwyt40000gn/T/RackMultipart20210617-59118-17ltixi.jpg>, @original_filename="exroute.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"imageFile\"; filename=\"exroute.jpg\"\r\nContent-Type: image/jpeg\r\n">, "caption-input"=>"asdf"}
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 6.3ms | Allocations: 5074)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'caption-input' for Image.):
+  
+app/controllers/images_controller.rb:18:in `create'
+Started POST "/images/" for ::1 at 2021-06-17 19:38:28 -0500
+Processing by ImagesController#create as */*
+  Parameters: {"imageFile"=>#<ActionDispatch::Http::UploadedFile:0x00007fdad72abf70 @tempfile=#<Tempfile:/var/folders/py/p2gcmwb92x7bd8jwq7jzwyt40000gn/T/RackMultipart20210617-59118-zy2z9b.jpg>, @original_filename="exfinal.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"imageFile\"; filename=\"exfinal.jpg\"\r\nContent-Type: image/jpeg\r\n">, "caption-input"=>"asdf"}
+[31mUnpermitted parameter: :caption-input[0m
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 3.6ms | Allocations: 5074)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'imageFile' for Image.):
+  
+app/controllers/images_controller.rb:18:in `create'
+Started POST "/images/" for ::1 at 2021-06-17 19:38:52 -0500
+Processing by ImagesController#create as */*
+  Parameters: {"imageFile"=>#<ActionDispatch::Http::UploadedFile:0x00007fdad3ef9c68 @tempfile=#<Tempfile:/var/folders/py/p2gcmwb92x7bd8jwq7jzwyt40000gn/T/RackMultipart20210617-59118-1bbve9g.jpg>, @original_filename="exview.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"imageFile\"; filename=\"exview.jpg\"\r\nContent-Type: image/jpeg\r\n">, "caption-input"=>"asdf"}
+[31mUnpermitted parameters: :imageFile, :caption-input[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.66ms)
+Completed 422 Unprocessable Entity in 23ms (Views: 1.2ms | ActiveRecord: 3.8ms | Allocations: 6952)
+
+
+Started POST "/images/" for ::1 at 2021-06-17 19:43:33 -0500
+Processing by ImagesController#create as */*
+  Parameters: {"image"=>#<ActionDispatch::Http::UploadedFile:0x00007fdad8825068 @tempfile=#<Tempfile:/var/folders/py/p2gcmwb92x7bd8jwq7jzwyt40000gn/T/RackMultipart20210617-59118-1b4vewe.jpg>, @original_filename="exmodel.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"exmodel.jpg\"\r\nContent-Type: image/jpeg\r\n">, "caption"=>"asdf"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.41ms)
+Completed 422 Unprocessable Entity in 61ms (Views: 0.7ms | ActiveRecord: 2.0ms | Allocations: 15137)
+
+
+Started POST "/images/" for ::1 at 2021-06-17 19:44:39 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ImagesController#create as */*
+  Parameters: {"image"=>#<ActionDispatch::Http::UploadedFile:0x00007fe2fe0e7bb0 @tempfile=#<Tempfile:/var/folders/py/p2gcmwb92x7bd8jwq7jzwyt40000gn/T/RackMultipart20210617-60144-yqvtry.jpg>, @original_filename="exmodel.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"exmodel.jpg\"\r\nContent-Type: image/jpeg\r\n">, "caption"=>"asdf"}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (7.47ms)
+Completed 422 Unprocessable Entity in 63ms (Views: 8.9ms | ActiveRecord: 5.4ms | Allocations: 25296)
+
+
+Started POST "/images/" for ::1 at 2021-06-17 19:47:51 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ImagesController#create as */*
+  Parameters: {"image"=>#<ActionDispatch::Http::UploadedFile:0x00007f9bc4dbf378 @tempfile=#<Tempfile:/var/folders/py/p2gcmwb92x7bd8jwq7jzwyt40000gn/T/RackMultipart20210617-60217-7ve62f.jpg>, @original_filename="exroute.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"exroute.jpg\"\r\nContent-Type: image/jpeg\r\n">, "caption"=>"asdf"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/images_controller.rb:20:in `create'
+  [1m[36mImage Create (15.1ms)[0m  [1m[32mINSERT INTO "images" ("created_at", "updated_at", "caption") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2021-06-18 00:47:51.368236"], ["updated_at", "2021-06-18 00:47:51.368236"], ["caption", "asdf"]]
+  ↳ app/controllers/images_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/images_controller.rb:20:in `create'
+Completed 500 Internal Server Error in 95ms (ActiveRecord: 23.0ms | Allocations: 21522)
+
+
+  
+ActiveRecord::NotNullViolation (PG::NotNullViolation: ERROR:  null value in column "user_id" of relation "images" violates not-null constraint
+DETAIL:  Failing row contains (1, null, null, 2021-06-18 00:47:51.368236, 2021-06-18 00:47:51.368236, asdf).
+):
+  
+app/controllers/images_controller.rb:20:in `create'
+Started POST "/images/" for ::1 at 2021-06-17 19:48:32 -0500
+Processing by ImagesController#create as */*
+  Parameters: {"image"=>#<ActionDispatch::Http::UploadedFile:0x00007f9bc042bae0 @tempfile=#<Tempfile:/var/folders/py/p2gcmwb92x7bd8jwq7jzwyt40000gn/T/RackMultipart20210617-60217-18n4zcx.jpg>, @original_filename="exfinal.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"exfinal.jpg\"\r\nContent-Type: image/jpeg\r\n">, "caption"=>"asdf"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/images_controller.rb:20:in `create'
+  [1m[36mImage Create (3.6ms)[0m  [1m[32mINSERT INTO "images" ("created_at", "updated_at", "caption") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2021-06-18 00:48:33.036766"], ["updated_at", "2021-06-18 00:48:33.036766"], ["caption", "asdf"]]
+  ↳ app/controllers/images_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/images_controller.rb:20:in `create'
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 9.3ms | Allocations: 14904)
+
+
+  
+ActiveRecord::NotNullViolation (PG::NotNullViolation: ERROR:  null value in column "user_id" of relation "images" violates not-null constraint
+DETAIL:  Failing row contains (2, null, null, 2021-06-18 00:48:33.036766, 2021-06-18 00:48:33.036766, asdf).
+):
+  
+app/controllers/images_controller.rb:20:in `create'
+Started POST "/images/" for ::1 at 2021-06-17 19:49:26 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ImagesController#create as */*
+  Parameters: {"image"=>#<ActionDispatch::Http::UploadedFile:0x00007f9a5c692f00 @tempfile=#<Tempfile:/var/folders/py/p2gcmwb92x7bd8jwq7jzwyt40000gn/T/RackMultipart20210617-60285-q5a1gy.jpg>, @original_filename="exmodel.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image\"; filename=\"exmodel.jpg\"\r\nContent-Type: image/jpeg\r\n">, "caption"=>"asdfsfd"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/images_controller.rb:20:in `create'
+  [1m[36mImage Create (2.6ms)[0m  [1m[32mINSERT INTO "images" ("created_at", "updated_at", "caption") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2021-06-18 00:49:26.479443"], ["updated_at", "2021-06-18 00:49:26.479443"], ["caption", "asdfsfd"]]
+  ↳ app/controllers/images_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/images_controller.rb:20:in `create'
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 9.5ms | Allocations: 21434)
+
+
+  
+ActiveRecord::NotNullViolation (PG::NotNullViolation: ERROR:  null value in column "user_id" of relation "images" violates not-null constraint
+DETAIL:  Failing row contains (3, null, null, 2021-06-18 00:49:26.479443, 2021-06-18 00:49:26.479443, asdfsfd).
+):
+  
+app/controllers/images_controller.rb:20:in `create'
